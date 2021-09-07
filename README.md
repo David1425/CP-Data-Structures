@@ -10,7 +10,7 @@ You can modify what the segment tree does inside the `calc()` function by using.
 | Class Functions | Descriptions |
 |-----------------|--------------|
 | .setCalc(func) | sets what this segment tree does, defaults to min(a, b) for range minimum queries |
-| .setBase(func) | sets what is the base case if , defaults to INT_MAX for range minimum queries |
+| .setBase(func) | sets what the base case is if outside of query range, defaults to 2e9 for range minimum queries |
 | .build(vector) | initializes segment tree with a starting list of values |
 | .update(index, value) | updates the element at index(starting at 0) to value |
 | .query(left, right) | returns the answer to the query with range [left, right]|
