@@ -11,7 +11,7 @@ class segment_tree {
     
     // Return some value during query() when not in range
     T (*base)() = []() {
-        return T(2000000000);
+        return T(2e9);
     };
     
     void build(int i, int l, int r) {
