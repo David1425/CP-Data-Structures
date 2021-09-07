@@ -1,6 +1,8 @@
 #ifndef SEGMENT_TREE_H
 #define SEGMENT_TREE_H
 
+#include <bits/stdc++.h>
+
 // 0-indexed segment tree
 template <typename T>
 class segment_tree {
