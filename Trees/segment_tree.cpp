@@ -1,8 +1,3 @@
-#ifndef SEGMENT_TREE_H
-#define SEGMENT_TREE_H
-
-using namespace std;
-
 // 0-indexed segment tree
 template <typename T>
 class segment_tree {
@@ -61,5 +56,3 @@ class segment_tree {
     
     T query(int l, int r) { return query(l, r, 1, 0, size-1); } // Query range [l, r]
 };
-
-#endif
