@@ -1,8 +1,7 @@
 // 0-indexed segment tree
 template <typename T>
 class segment_tree {
-    vector<T> st, o;
-    int size;
+    vector<T> o;
     
     // Define calculation used in build() and update()
     T (*calc)(T, T) = [](T a, T b) {
@@ -48,6 +47,9 @@ class segment_tree {
     }
     
     public:
+    vector<T> st;
+    int size;
+    
     segment_tree(int n) : size(n) { st.assign(1<<(int(ceil(log2(n)))+1), 0); }
     
     void setCalc(T (*func)(T, T)) { calc=func; } // Used to change calc function - e.g. min(a, b) for Range Minimum Query, a+b for Range Sum Query
