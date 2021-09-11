@@ -4,7 +4,7 @@ class dsu_int { // Only for numbers values that are not too big
     vector<int> rank;
     vector<T> par;
     
-    DSU(T n) {
+    dsu_int(T n) {
         rank.assign(n, -1);
         par.assign(n, 0);
     }
