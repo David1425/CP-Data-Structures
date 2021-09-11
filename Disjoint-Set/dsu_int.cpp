@@ -1,10 +1,10 @@
 template<typename T>
-class dsu_int { // Only for numbers values that are not too big
+class DSU { // Only for numbers values that are not too big
     public:
     vector<int> rank;
     vector<T> par;
     
-    dsu_int(T n) {
+    DSU(T n) {
         rank.assign(n, -1);
         par.assign(n, 0);
     }
