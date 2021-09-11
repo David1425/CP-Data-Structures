@@ -5,6 +5,7 @@ Some data structures that I use in competitive programming
  - [Segment Tree](https://github.com/David1425/CP-Data-Structures/blob/main/README.md#segment-tree---segment_treecpp)
 
 ### Segment Tree - [segment_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/segment_tree.cpp)
+0-indexed segment tree.
 You can modify what the segment tree does inside the `calc()` function by using. You can also set a base case (for when searching range is outside the query range) inside the `base()` function. The default is set to range minimum queries (however if the constraints are big, you might want to use a bigger value than 2e9 in the `base()` function). See table of functions below for changing `calc` and `base`.
 
 | Class Functions | Descriptions |
