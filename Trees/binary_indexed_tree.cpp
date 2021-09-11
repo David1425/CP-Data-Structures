@@ -23,7 +23,6 @@ class binary_indexed_tree {
     void setBase(T val) { base=val; }
     
     void update(int ind, T v) {
-        ind++;
         for (; ind <= size; ind += ind&-ind) {
             bit[ind] = calc(bit[ind], v);
         }
@@ -31,12 +30,11 @@ class binary_indexed_tree {
     
     void build(vector<T> vec) {
         for (int i = 0; i < vec.size(); i++) {
-            update(i, vec[i]);
+            update(i+1, vec[i]);
         }
     }
     
     T query(int pos) {
-        pos++;
         T res = base;
         for (; pos > 0; pos -= pos&-pos) {
             res = calc(res, bit[pos]);
