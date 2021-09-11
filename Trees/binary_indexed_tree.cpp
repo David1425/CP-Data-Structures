@@ -1,30 +1,26 @@
 template <typename T>
 class binary_indexed_tree {
-    
-    // Define calculation used in build() and update()
     T (*calc)(T, T) = [](T a, T b) {
         return a+b;
     };
     
-    // Define inverse calculation used in range query()
     T (*inv)(T, T) = [](T a, T b) {
         return a-b;
     };
     
-    // Return a value to start with during query()
     T base = 0;
     
     public:
     vector<T> bit;
     int size;
     
-    binary_indexed_tree(int n, int def = 0) : size(n) { // def sets base values
+    binary_indexed_tree(int n, int def = 0) : size(n) {
         bit.assign(n+1, def);
     }
     
-    void setCalc(T (*func)(T, T)) { calc=func; } // Used to change calc function - e.g. a+b for Range Sum Query, a*b for Range Product Query
-    void setInv(T (*func)(T, T)) { inv=func; } // Used to change inv function - e.g. a-b for Range Sum Query, a/b for Range Product Query
-    void setBase(T val) { base=val; } // Used to change base value - e.g. 0 for Range Sum Query, 1 for Range Product Query
+    void setCalc(T (*func)(T, T)) { calc=func; }
+    void setInv(T (*func)(T, T)) { inv=func; }
+    void setBase(T val) { base=val; }
     
     void update(int ind, T v) {
         ind++;
