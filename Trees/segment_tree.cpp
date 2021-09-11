@@ -1,14 +1,11 @@
-// 0-indexed segment tree
 template <typename T>
 class segment_tree {
     vector<T> o;
     
-    // Define calculation used in build() and update()
     T (*calc)(T, T) = [](T a, T b) {
         return min(a, b);
     };
     
-    // Return some value during query() when not in range
     T base = T(2e9);
     
     void build(int i, int l, int r) {
@@ -50,12 +47,12 @@ class segment_tree {
     
     segment_tree(int n) : size(n) { st.assign(1<<(int(ceil(log2(n)))+1), 0); }
     
-    void setCalc(T (*func)(T, T)) { calc=func; } // Used to change calc function - e.g. min(a, b) for Range Minimum Query, a+b for Range Sum Query
-    void setBase(T val) { base=val; } // Used to change base value - e.g. INT_MAX or LONG_MAX for Range Minimum Query, 0 for Range Sum Query
+    void setCalc(T (*func)(T, T)) { calc=func; }
+    void setBase(T val) { base=val; }
     
-    void build(vector<T> v) { o=v; build(1, 0, size-1); } // Build initial segment tree
+    void build(vector<T> v) { o=v; build(1, 0, size-1); }
     
-    void update(int ind, T v) { update(ind, v, 1, 0, size-1); } // Update element at ind to v
+    void update(int ind, T v) { update(ind, v, 1, 0, size-1); }
     
-    T query(int l, int r) { return query(l, r, 1, 0, size-1); } // Query range [l, r]
+    T query(int l, int r) { return query(l, r, 1, 0, size-1); }
 };
