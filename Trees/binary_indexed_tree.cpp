@@ -44,7 +44,5 @@ class binary_indexed_tree {
         return res;
     }
     
-    T query(int l, int r) {
-        return inv(query(r), query(l-1));
-    }
+    T query(int l, int r) { return inv(query(r), query(l-1)); }
 };
