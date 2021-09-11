@@ -5,8 +5,8 @@ class DSU { // Only for numbers values that are not too big
     vector<T> par;
     
     DSU(T n) {
-        rank.assign(n, -1);
-        par.assign(n, 0);
+        rank.assign(n, 0);
+        par.assign(n, -1);
     }
     
     T find(T x) {
