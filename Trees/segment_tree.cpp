@@ -9,9 +9,7 @@ class segment_tree {
     };
     
     // Return some value during query() when not in range
-    T (*base)() = []() {
-        return T(2e9);
-    };
+    T base = T(2e9);
     
     void build(int i, int l, int r) {
         if (l == r) {
@@ -53,7 +51,7 @@ class segment_tree {
     segment_tree(int n) : size(n) { st.assign(1<<(int(ceil(log2(n)))+1), 0); }
     
     void setCalc(T (*func)(T, T)) { calc=func; } // Used to change calc function - e.g. min(a, b) for Range Minimum Query, a+b for Range Sum Query
-    void setBase(T (*func)()) { base=func; } // Used to change base function - e.g. INT_MAX or LONG_MAX for Range Minimum Query, 0 for Range Sum Query
+    void setBase(T bv) { base=bv; } // Used to change base value - e.g. INT_MAX or LONG_MAX for Range Minimum Query, 0 for Range Sum Query
     
     void build(vector<T> v) { o=v; build(1, 0, size-1); } // Build initial segment tree
     
