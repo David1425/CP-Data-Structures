@@ -22,15 +22,17 @@ class binary_indexed_tree {
     void setInv(T (*func)(T, T)) { inv=func; }
     void setBase(T val) { base=val; }
     
-    void update(int ind, T v) {
-        for (; ind <= size; ind += ind&-ind) {
-            bit[ind] = calc(bit[ind], v);
+    void build(vector<T> vec) {
+        for (int i = 1; i <= vec.size(); i++) {
+            bit[i] += vec[i-1];
+            int x = i + (i&-i);
+            if (x <= vec.size()) bit[x] += bit[i];
         }
     }
     
-    void build(vector<T> vec) {
-        for (int i = 0; i < vec.size(); i++) {
-            update(i+1, vec[i]);
+    void update(int ind, T v) {
+        for (; ind <= size; ind += ind&-ind) {
+            bit[ind] = calc(bit[ind], v);
         }
     }
     
