@@ -33,7 +33,7 @@ class segment_tree {
     }
     
     T query(int lx, int rx, int i, int l, int r) {
-        if (r < lx || l > rx) return base();
+        if (r < lx || l > rx) return base;
         if (l >= lx && r <= rx) return st[i];
         int mid = (l+r)/2;
         T a = query(lx, rx, i*2, l, mid);
