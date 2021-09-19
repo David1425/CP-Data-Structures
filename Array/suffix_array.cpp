@@ -1,7 +1,4 @@
 class suffix_array {
-    int getVal(int i) {
-        return ((val[i]<<(k+1)) | val[(i+x)%size]);
-    }
     string s;
     int k, x;
     
@@ -25,20 +22,20 @@ class suffix_array {
             if (vec[i].first != vec[i-1].first) val[ind[i]]++;
         }
         
-        vector<pair<int, int>> a(size);
+        vector<pair<pair<int, int>, int>> a(size);
         
         k = 0;
         int l = log2(size);
         while (k <= l) {
             x = 1 << k;
-            for (int i = 0; i < size; i++) a[i] = {getVal(i), i};
+            for (int i = 0; i < size; i++) a[i] = {{val[i], val[(i+x)%size]}, i};
             sort(a.begin(), a.end());
             ind[0] = a[0].second;
             val[ind[0]] = 0;
             for (int i = 1; i < size; i++) {
                 ind[i] = a[i].second;
-                val[ind[i]] = val[ind[i-1]];
-                if (getVal(ind[i]) != getVal(ind[i-1])) val[ind[i]]++;
+                if (a[i-1].first != a[i].first) val[ind[i]]=val[ind[i-1]]+1;
+                else val[ind[i]] = val[ind[i-1]];
             }
             k++;
         }
