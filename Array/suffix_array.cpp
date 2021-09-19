@@ -27,7 +27,7 @@ class suffix_array {
         
         vector<pair<int, int>> a(size);
         
-        k = 1;
+        k = 0;
         int l = log2(size);
         while (k <= l) {
             x = 1 << k;
