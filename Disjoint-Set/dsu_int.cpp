@@ -1,23 +1,28 @@
-template<typename T>
 class DSU { // Only for numberic values that are not too big
     public:
     vector<int> rank;
-    vector<T> par;
-    int size;
+    vector<int> par;
+    int MX;
     
-    DSU(T n) : size(0) {
-        rank.assign(n, 0);
-        par.assign(n, -1);
+    DSU() {}
+    DSU(int n) : size(0), MX(n+2) {
+        rank.assign(n+2, 0);
+        par.assign(n+2, -1);
     }
     
-    T find(T x) {
+    void clear() {
+        rank.assign(MX, 0);
+        par.assign(MX, -1);
+    }
+    
+    int find(int x) {
         if (par[x] == -1) return x;
         par[x] = find(par[x]);
         return par[x];
     }
     
-    void merge(T a, T b) {
-        T x = find(a), y = find(b);
+    void merge(int a, int b) {
+        int x = find(a), y = find(b);
         if (x == y) return;
         if (rank[x] > rank[y]) par[y] = x;
         else if (rank[x] < rank[y]) par[x] = y;
@@ -25,6 +30,5 @@ class DSU { // Only for numberic values that are not too big
             par[y] = x;
             rank[x]++;
         }
-        size++;
     }
 };
