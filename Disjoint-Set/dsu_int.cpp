@@ -3,8 +3,9 @@ class DSU { // Only for numberic values that are not too big
     public:
     vector<int> rank;
     vector<T> par;
+    int size;
     
-    DSU(T n) {
+    DSU(T n) : size(0) {
         rank.assign(n, 0);
         par.assign(n, -1);
     }
@@ -24,5 +25,6 @@ class DSU { // Only for numberic values that are not too big
             par[y] = x;
             rank[x]++;
         }
+        size++;
     }
 };
