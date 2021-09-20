@@ -6,6 +6,11 @@ class DSU { // Works for any types but a bit slower because of unordered_map
     
     DSU() {}
     
+    void clear() {
+        rank.clear();
+        par.clear();
+    }
+    
     T find(T x) {
         if (par.find(x) == par.end()) return x;
         par[x] = find(par[x]);
