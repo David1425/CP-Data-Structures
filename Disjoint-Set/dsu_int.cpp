@@ -1,5 +1,5 @@
 template<typename T>
-class DSU { // Only for numbers values that are not too big
+class DSU { // Only for numberic values that are not too big
     public:
     vector<int> rank;
     vector<T> par;
