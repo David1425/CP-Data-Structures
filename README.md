@@ -11,3 +11,7 @@ Some data structures and algorithms that I use in competitive programming
 
 ## Arrays
  - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Array/suffix_array.cpp)
+
+## Math
+ - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
+ - Fast Exponentiation - [fast_power.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fast_power.cpp)
