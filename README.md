@@ -1,5 +1,5 @@
-# CP-Data-Structures
-Some data structures that I use in competitive programming
+# CP-DataStructures-And-Algorithms
+Some data structures and algorithms that I use in competitive programming
 
 ## Trees
  - Segment Tree - [segment_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/segment_tree.cpp)
