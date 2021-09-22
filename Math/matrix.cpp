@@ -1,5 +1,5 @@
 template <typename T>
-struct matrix {
+class matrix {
     vector<vector<T>> mat;
     int h, w;
     T md = -1;
