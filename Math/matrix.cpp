@@ -1,5 +1,6 @@
 template <typename T>
 class matrix {
+    public:
     vector<vector<T>> mat;
     int h, w;
     T md = -1;
