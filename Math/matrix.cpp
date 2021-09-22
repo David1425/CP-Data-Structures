@@ -3,7 +3,6 @@ class matrix {
     public:
     vector<vector<T>> mat;
     int h, w;
-    T md = -1;
     
     matrix(int h, int w) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); }
     matrix(vector<vector<T>> vec) {
@@ -13,7 +12,7 @@ class matrix {
     }
     
     matrix pow(long long b, matrix res) { // matrix exponentiation
-        matrix a = mat;
+        matrix a = (*this);
         while (b > 0) {
             if (b&1) res = res*a;
             a = a*a;
@@ -37,20 +36,10 @@ class matrix {
         int y = m.h;
         assert(w == y);
         matrix tmp(h, x);
-        if (md != -1) {
             for (int i = 0; i < h; i++) {
-                for (int j = 0; j < w; j++) {
-                    for (int k = 0; k < x; k++) {
-                        tmp(i, k) = (tmp(i, k) + (mat[i][j]*m(j, k))%md )%md;
-                    }
-                }
-            }
-        } else {
-            for (int i = 0; i < h; i++) {
-                for (int j = 0; j < w; j++) {
-                    for (int k = 0; k < x; k++) {
-                        tmp(i, k) += mat[i][j]*m(j, k);
-                    }
+            for (int j = 0; j < w; j++) {
+                for (int k = 0; k < x; k++) {
+                    tmp(i, k) = (tmp(i, k) + (mat[i][j]*m(j, k))/*%MOD*/)/*%MOD*/;
                 }
             }
         }
