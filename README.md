@@ -15,3 +15,4 @@ Some data structures and algorithms that I use in competitive programming
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
  - Fast Exponentiation - [fast_power.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fast_power.cpp)
+ - Matrix (multiplication, exponentiation) - [matrix.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/matrix.cpp)
