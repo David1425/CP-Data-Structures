@@ -4,13 +4,20 @@ class matrix {
     vector<vector<T>> mat;
     int h, w;
     
-    matrix(int h=1, int w=1, int v=0) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); for (int i=min(h,w)-1;i>=0;i--)mat[i][i]=v;}
+    //-- Matrix constructors --//
+    matrix(int h=1, int w=1, T v=0, bool d=0) : h(h), w(w) {
+        if(!d) mat.assign(h, vector<T>(w, v));
+        else {
+            mat.assign(h, vector<T>(w, 0));
+            for (int i = 0; i < min(h, w); i++) mat[i][i] = v;
+        }
+    }
     template <typename U>
     matrix(matrix<U> m) {
         h = m.h; w = m.w;
         mat.resize(h);
         for (int i = 0; i < h; i++) {
-            mat[i] = vector<T>(m.mat[i].begin(), m.mat[i].end());
+            mat[i] = vector<T>(m(i).begin(), m(i).end());
         }
     }
     template <typename U> matrix(vector<vector<U>> vec) { init(vec); }
@@ -33,9 +40,17 @@ class matrix {
         }
     }
     
+    //-- Assignment functions --//
     template <typename U>
-    matrix pow(U b) { // matrix exponentiation
-        matrix a(*this), res(h, w, 1);
+    void fill(U x) { mat.assign(h, vector<T>(w, T(x))); }
+    
+    template <typename U>
+    void fill_d(U x) { for(int i=0;i<min(h,w);i++)mat[i][i]=x; }
+    
+    //-- Math functions --//
+    template <typename U>
+    matrix<T> pow(U b) {
+        matrix<T> a(*this), res(h, w, 1);
         while (b > 0) {
             if (b&1) res = res*a;
             a = a*a;
@@ -45,9 +60,15 @@ class matrix {
         return res;
     }
     
+    /*T determinant() {
+        
+    }*/
+    
+    //-- Index operators --//
     T& operator () (int r, int c) { return mat[r][c]; }
     vector<T>& operator () (int r) { return mat[r]; }
     
+    //--- Arithmetic operators --//
     template <typename U>
     void operator = (vector<vector<U>> vec) {
         h = vec.size();
@@ -58,11 +79,34 @@ class matrix {
         }
     }
     
-    matrix operator * (matrix m) {
-        int x = m.w;
-        int y = m.h;
+    matrix<T> operator + (matrix<T> m) {
+        int x = m.w, y = m.h;
+        assert(w == x && h == y);
+        matrix<T> tmp(h, w);
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                tmp(i, j) = (mat[i][j] + m(i, j))%MOD;
+            }
+        }
+        return tmp;
+    }
+    
+    matrix<T> operator - (matrix<T> m) {
+        int x = m.w, y = m.h;
+        assert(w == x && h == y);
+        matrix<T> tmp(h, w);
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                tmp(i, j) = (mat[i][j] - m(i, j)+MOD)%MOD;
+            }
+        }
+        return tmp;
+    }
+    
+    matrix<T> operator * (matrix<T> m) {
+        int x = m.w, y = m.h;
         assert(w == y);
-        matrix tmp(h, x);
+        matrix<T> tmp(h, x);
             for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 for (int k = 0; k < x; k++) {
@@ -73,18 +117,16 @@ class matrix {
         
         return tmp;
     }
-    
     template <typename U>
-    matrix operator * (vector<vector<U>> m) {
-        return (*this) * matrix(m);
-    }
+    matrix<T> operator * (vector<vector<U>> m) { return (*this) * matrix(m); }
     
-    friend istream& operator >> (istream& is, matrix& m) {
-        for (auto& i : m.mat) { for (auto& j : i) { is>>j; } }
+    //-- I/O stream operators --//
+    friend istream& operator >> (istream& is, matrix<T>& m) {
+        for (auto& i : m.mat) for (auto& j : i) is>>j;
         return is;
     }
     
-    friend ostream& operator << (ostream& os, matrix m) {
+    friend ostream& operator << (ostream& os, matrix<T> m) {
         os << "[\n";
         for (auto i : m.mat) {
             os << "[";
