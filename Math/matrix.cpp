@@ -4,10 +4,27 @@ class matrix {
     vector<vector<T>> mat;
     int h, w;
     
-    matrix() : h(1), w(1) { mat.assign(1, vector<T>(1, 0)); }
-    matrix(int h, int w) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); }
+    matrix(int h=1, int w=1, int v=0) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); for (int i=min(h,w)-1;i>=0;i--)mat[i][i]=v;}
     template <typename U>
-    matrix(vector<vector<U>> vec) {
+    matrix(matrix<U> m) {
+        h = m.h; w = m.w;
+        mat.resize(h);
+        for (int i = 0; i < h; i++) {
+            mat[i] = vector<T>(m.mat[i].begin(), m.mat[i].end());
+        }
+    }
+    template <typename U> matrix(vector<vector<U>> vec) { init(vec); }
+    template <typename U>
+    matrix(initializer_list<initializer_list<U>> lis) {
+        vector<vector<U>> t_vec;
+        for (auto i : lis) {
+            t_vec.emplace_back(vector<U>(i));
+        }
+        init(t_vec);
+    }
+    
+    template <typename U>
+    void init(vector<vector<U>> vec) {
         h = vec.size();
         w = vec[0].size();
         mat.resize(vec.size());
@@ -17,8 +34,8 @@ class matrix {
     }
     
     template <typename U>
-    matrix pow(U b, matrix res) { // matrix exponentiation
-        matrix a = (*this);
+    matrix pow(U b) { // matrix exponentiation
+        matrix a(*this), res(h, w, 1);
         while (b > 0) {
             if (b&1) res = res*a;
             a = a*a;
