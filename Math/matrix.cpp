@@ -4,6 +4,7 @@ class matrix {
     vector<vector<T>> mat;
     int h, w;
     
+    matrix() : h(1), w(1) { mat.assign(1, vector<T>(1, 0)); }
     matrix(int h, int w) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); }
     template <typename U>
     matrix(vector<vector<U>> vec) {
