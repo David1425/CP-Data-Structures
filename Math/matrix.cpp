@@ -1,17 +1,22 @@
-template <typename T>
+template <typename T = long long>
 class matrix {
     public:
     vector<vector<T>> mat;
     int h, w;
     
     matrix(int h, int w) : h(h), w(w) { mat.assign(h, vector<T>(w, 0)); }
-    matrix(vector<vector<T>> vec) {
+    template <typename U>
+    matrix(vector<vector<U>> vec) {
         h = vec.size();
         w = vec[0].size();
-        mat = vec;
+        mat.resize(vec.size());
+        for (int i = 0; i < vec.size(); i++) {
+            mat[i] = vector<T>(vec[i].begin(), vec[i].end());
+        }
     }
     
-    matrix pow(long long b, matrix res) { // matrix exponentiation
+    template <typename U>
+    matrix pow(U b, matrix res) { // matrix exponentiation
         matrix a = (*this);
         while (b > 0) {
             if (b&1) res = res*a;
@@ -25,10 +30,14 @@ class matrix {
     T& operator () (int r, int c) { return mat[r][c]; }
     vector<T>& operator () (int r) { return mat[r]; }
     
-    void operator = (vector<vector<T>> vec) {
+    template <typename U>
+    void operator = (vector<vector<U>> vec) {
         h = vec.size();
         w = vec[0].size();
-        mat = vec;
+        mat.resize(vec.size());
+        for (int i = 0; i < vec.size(); i++) {
+            mat[i] = vector<T>(vec[i].begin(), vec[i].end());
+        }
     }
     
     matrix operator * (matrix m) {
@@ -47,17 +56,23 @@ class matrix {
         return tmp;
     }
     
-    matrix operator * (vector<vector<T>> m) {
+    template <typename U>
+    matrix operator * (vector<vector<U>> m) {
         return (*this) * matrix(m);
     }
     
+    friend istream& operator >> (istream& is, matrix& m) {
+        for (auto& i : m.mat) { for (auto& j : i) { is>>j; } }
+        return is;
+    }
+    
     friend ostream& operator << (ostream& os, matrix m) {
-        cout << "{\n";
+        os << "[\n";
         for (auto i : m.mat) {
-            cout << "{";
-            for (int j = 0; j < m.w; j++) os << i[j] << ((j < m.w-1) ? ", " : "}\n");
+            os << "[";
+            for (int j = 0; j < m.w; j++) os << i[j] << ((j < m.w-1) ? ", " : "]\n");
         }
-        cout << "}\n";
+        os << "]\n";
         return os;
     }
 };
