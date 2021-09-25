@@ -10,7 +10,7 @@ Some data structures and algorithms that I use in competitive programming
  - Disjoint Set Union for any type - [dsu_any.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Disjoint-Set/dsu_any.cpp)
 
 ## Arrays
- - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Array/suffix_array.cpp)
+ - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/suffix_array.cpp)
 
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
