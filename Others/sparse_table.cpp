@@ -6,7 +6,7 @@ class sparse_table {
     public:
     vector<vector<T>> tbl;
     int n;
-    sparse_table(int mx=0) : n(mx) { tbl.assign(mx, vector<T>(log2(mx))); }
+    sparse_table(int mx=0) : n(mx) { tbl.assign(mx, vector<T>(log2(mx)+1)); }
     void build(vector<T> vec) {
         if (n == 0) n = vec.size();
         for (int i = 0; i < n; i++) tbl[i][0] = vec[i];
