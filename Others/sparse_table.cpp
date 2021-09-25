@@ -6,11 +6,12 @@ class sparse_table {
     public:
     vector<vector<T>> tbl;
     int n;
-    sparse_table(int mx=0) : n(mx) { tbl.assign(mx, vector<T>(log2(mx)+1)); }
+    sparse_table(){}
     void build(vector<T> vec) {
-        if (n == 0) n = vec.size();
-        for (int i = 0; i < n; i++) tbl[i][0] = vec[i];
+        n = vec.size();
         int lg = log2(n);
+        tbl.assign(n, vector<T>(lg+1));
+        for (int i = 0; i < n; i++) tbl[i][0] = vec[i];
         for (int j = 1; j <= lg; j++) {
             for (int i = 0; i+(1<<(j-1)) < n; i++) {
                 tbl[i][j] = min(tbl[i][j-1], tbl[i+(1<<(j-1))][j-1]);
