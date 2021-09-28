@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
     while (x!="" || y!="") {
         line++;
         if (x != y) {
-            diff.push_back({line, to_string(x.size())+"len: "+x, to_string(y.size())+"len: "+y});
+            diff.push_back({line, x, y});
         }
         getline(ain, x);
         getline(bin, y);
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
         printCase();
         cout << diff.size() << " difference found.\n";
         for (auto i : diff) {
-            cout << "at line " << i.l << ": " << i.va << " " << i.vb << "\n";
+            cout << "at line " << i.l << ":\n\tA.cpp: " << i.va << "\n\tB.cpp: " << i.vb << "\n";
         }
     }
 }
