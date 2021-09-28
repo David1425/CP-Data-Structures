@@ -9,8 +9,8 @@
 
 echo "compiling scripts..."
 g++ "${2}/gen.cpp" -o gen
-g++ "${2}/A.cpp" -o A
-g++ "${2}/B.cpp" -o B
+g++ "${2}/A.cpp" -o A           # Put your program in A.cpp
+g++ "${2}/B.cpp" -o B           # Put brute force program in B.cpp
 g++ "${2}/checker.cpp" -o checker
 echo "running..."
 
