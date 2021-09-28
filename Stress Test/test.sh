@@ -3,6 +3,10 @@
 # Run this to stress test A.cpp and compare it with B.cpp
 # Put in number of tests and folder in command line arguments
 
+# example:
+# test.sh 10 /usr/code
+# stress test A.cpp 10 times in path /usr/code
+
 echo "compiling scripts..."
 g++ "${2}/gen.cpp" -o gen
 g++ "${2}/A.cpp" -o A
