@@ -13,10 +13,16 @@ long long rand(long long l, long long r) {
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
     
+    // Program the generator according to the problem
+    /*
+    Example:
+    
     int n = rand(1, 1000);
     cout << n << "\n";
     for (int i = 0; i < n; i++) {
         cout << rand(0, 1000000000) << " ";
     }
     cout << "\n";
+    
+    */
 }
