@@ -10,7 +10,7 @@ struct err {
 };
 
 void printCase() {
-    // Change printCase() according to problem
+    // Program printCase() according to the problem
     /*
     Example:
     
