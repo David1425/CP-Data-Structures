@@ -74,4 +74,6 @@ int main(int argc, char* argv[]) {
             cout << "at line " << i.l << ":\n\tA.cpp: " << i.va << "\n\tB.cpp: " << i.vb << "\n";
         }
     }
+    
+    return 0;
 }
