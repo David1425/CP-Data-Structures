@@ -10,6 +10,10 @@ struct err {
 };
 
 void printCase() {
+    // Change printCase() according to problem
+    /*
+    Example:
+    
     int n;
     cin >> n;
     cout << n << "\n";
@@ -19,6 +23,7 @@ void printCase() {
         cout << a << " ";
     }
     cout << "\n\n";
+    */
 }
 
 class trimmer {
