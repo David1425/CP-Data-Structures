@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Run this to stress test A.cpp and compare it with B.cpp
 # Put in number of tests and folder in command line arguments
 
 echo "compiling scripts..."
