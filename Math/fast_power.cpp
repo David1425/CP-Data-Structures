@@ -1,5 +1,6 @@
-long long fpow(long long a, long long b) {
-    long long x = 1;
+template<typename T, typename U>
+T fpow(T a, U b) {
+    T x = 1;
     while (b > 0) {
         if (b&1) x *= a;
         a *= a;
@@ -8,8 +9,9 @@ long long fpow(long long a, long long b) {
     return x;
 }
 
-long long fpow(long long a, long long b, long long m) {
-    long long x = 1;
+template<typename T, typename U, typename V>
+T fpow(T a, U b, V m) {
+    T x = 1;
     while (b > 0) {
         if (b&1) x = (x*a)%m;
         a = (a*a)%m;
