@@ -5,7 +5,7 @@ class DSU { // Only for numberic values that are not too big
     int MX;
     
     DSU() {}
-    DSU(int n) : size(0), MX(n+2) {
+    DSU(int n) : MX(n+2) {
         rank.assign(n+2, 0);
         par.assign(n+2, -1);
     }
