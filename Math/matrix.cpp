@@ -1,6 +1,5 @@
 template <typename T = long long>
-class matrix {
-    public:
+struct matrix {
     vector<vector<T>> mat;
     int h, w;
     
