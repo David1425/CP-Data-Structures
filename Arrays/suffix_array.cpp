@@ -1,8 +1,7 @@
-class suffix_array {
+struct suffix_array {
     string s;
     int k, x;
     
-    public:
     vector<int> ind, val;
     int size;
     
