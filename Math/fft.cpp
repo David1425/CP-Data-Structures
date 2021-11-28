@@ -71,7 +71,7 @@ vector<int> mult(string x, string y) { // Large number multiplication
         }
         r[i] = x%10;
     }
-    reverse(all(r));
+    reverse(r.begin(), r.end());
     
     vector<int> ans;
     bool f = 0;
