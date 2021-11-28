@@ -1,5 +1,5 @@
 template <typename T>
-class binary_indexed_tree {
+struct binary_indexed_tree {
     T (*calc)(T, T) = [](T a, T b) {
         return a+b;
     };
@@ -10,7 +10,6 @@ class binary_indexed_tree {
     
     T base = 0;
     
-    public:
     vector<T> bit;
     int size;
     
