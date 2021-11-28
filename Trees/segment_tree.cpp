@@ -1,5 +1,5 @@
 template <typename T>
-class segment_tree {
+struct segment_tree {
     vector<T> o;
     
     T (*calc)(T, T) = [](T a, T b) {
@@ -41,7 +41,6 @@ class segment_tree {
         return calc(a, b);
     }
     
-    public:
     vector<T> st;
     int size;
     
