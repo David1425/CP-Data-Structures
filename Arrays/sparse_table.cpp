@@ -1,9 +1,8 @@
 template<typename T=int>
-class sparse_table {
+struct sparse_table {
     int log2(long long x) { return 63 - __builtin_clzl(x); }
     int log2(int x) { return 31 - __builtin_clz(x); }
     
-    public:
     vector<vector<T>> tbl;
     int n;
     sparse_table(){}
