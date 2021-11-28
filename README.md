@@ -7,7 +7,7 @@ Some data structures and algorithms that I use in competitive programming
 
 ## Arrays
  - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Arrays/suffix_array.cpp)
- - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/sparse_table.cpp)
+ - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Arrays/sparse_table.cpp)
 
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
