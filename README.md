@@ -20,4 +20,4 @@ Some data structures and algorithms that I use in competitive programming
  - Disjoint Set Union for numberic values that are not too big (smaller than ~1e7) - [dsu_int.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_int.cpp)
  - Disjoint Set Union for any type - [dsu_any.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_any.cpp)
  - Coodinate Compression - [coodinate_compression.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/coodinate_compression.cpp)
- - Custom Hash Function from neal's [cf post](https://codeforces.com/blog/entry/62393) - [custom_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/custom_hash.cpp)
+ - Custom Hash Function from [neal's](https://codeforces.com/blog/entry/62393) cf post - [custom_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/custom_hash.cpp)
