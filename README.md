@@ -3,6 +3,7 @@ Some data structures and algorithms that I use in competitive programming
 
 ## Trees
  - Segment Tree - [segment_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/segment_tree.cpp)
+ - Semgent Tree with Lazy Propagation - [seg_lazy.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/seg_lazy.cpp)
  - Binary Indexed Tree - [binary_indexed_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/binary_indexed_tree.cpp)
 
 ## Arrays
