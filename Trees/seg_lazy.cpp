@@ -20,7 +20,7 @@ void upd(int i, int x, int y, int v, int l, int r) {
         seg[i] += (r-l)*lazy[i];
         if (l < r-1) {
             lazy[(i<<1)+1] += lazy[i];
-            lazy[(i<<1)+1] += lazy[i];
+            lazy[(i<<1)+2] += lazy[i];
         }
         lazy[i] = 0;
     }
@@ -45,7 +45,7 @@ long long qry(int i, int x, int y, int l, int r) {
         seg[i] += (r-l)*lazy[i];
         if (l < r-1) {
             lazy[(i<<1)+1] += lazy[i];
-            lazy[(i<<1)+1] += lazy[i];
+            lazy[(i<<1)+2] += lazy[i];
         }
         lazy[i] = 0;
     }
