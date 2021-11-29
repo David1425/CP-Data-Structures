@@ -15,7 +15,7 @@ void build(int i, int l, int r) {
     seg[i] = seg[(i<<1)+1]+seg[(i<<1)+2];
 }
 
-void upd(int i, int x, int y, int v, int l, int r) {
+void upd(int i, int x, int y, long long v, int l, int r) {
     if (lazy[i]) {
         seg[i] += (r-l)*lazy[i];
         if (l < r-1) {
