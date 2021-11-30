@@ -60,7 +60,7 @@ struct matrix {
     }
     
     /*T determinant() {
-        
+        WIP
     }*/
     
     //-- Index operators --//
@@ -106,7 +106,7 @@ struct matrix {
         int x = m.w, y = m.h;
         assert(w == y);
         matrix<T> tmp(h, x);
-            for (int i = 0; i < h; i++) {
+        for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 for (int k = 0; k < x; k++) {
                     tmp(i, k) = (tmp(i, k) + (mat[i][j]*m(j, k))%MOD)%MOD;
