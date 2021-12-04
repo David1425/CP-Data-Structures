@@ -69,23 +69,9 @@ struct matrix {
     
     //--- Arithmetic operators --//
     template <typename U>
-    void operator = (vector<vector<U>> vec) {
-        h = vec.size();
-        w = vec[0].size();
-        mat.resize(vec.size());
-        for (int i = 0; i < vec.size(); i++) {
-            mat[i] = vector<T>(vec[i].begin(), vec[i].end());
-        }
-    }
-    
+    void operator = (vector<vector<U>> vec) { *this = matrix(vec); }
     template <typename U>
-    void operator = (initializer_list<initializer_list<U>> lis) {
-        vector<vector<U>> vec;
-        for (auto i : lis) {
-            vec.emplace_back(vector<U>(i));
-        }
-        *this = vec;
-    }
+    void operator = (initializer_list<initializer_list<U>> lis) { *this = matrix(lis); }
     
     matrix<T> operator + (matrix<T> m) {
         int x = m.w, y = m.h;
@@ -125,8 +111,6 @@ struct matrix {
         
         return tmp;
     }
-    template <typename U>
-    matrix<T> operator * (vector<vector<U>> m) { return (*this) * matrix(m); }
     
     //-- I/O stream operators --//
     friend istream& operator >> (istream& is, matrix<T>& m) {
@@ -143,3 +127,4 @@ struct matrix {
         os << "]\n";
         return os;
     }
+};
