@@ -72,10 +72,6 @@ struct matrix {
         return res;
     }
     
-    /*T determinant() {
-        WIP
-    }*/
-    
     //-- Index operators --//
     T& operator () (int r, int c) { return mat[r][c]; }
     vector<T>& operator () (int r) { return mat[r]; }
