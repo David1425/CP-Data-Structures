@@ -49,13 +49,26 @@ struct matrix {
     //-- Math functions --//
     template <typename U>
     matrix<T> pow(U b) {
-        matrix<T> a(*this), res(h, w, 1);
+        b--;
+        matrix<T> a(*this), res(*this);
         while (b > 0) {
             if (b&1) res = res*a;
             a = a*a;
             b >>= 1;
         }
         
+        return res;
+    }
+    
+    T sum(int rs = 0, int cs = 0, int rt = -1, int ct = -1) {
+        if (rt == -1) rt = h-1;
+        if (ct == -1) ct = w-1;
+        T res = 0;
+        for (int i = rs; i <= rt; i++) {
+            for (int j = cs; j <= ct; j++) {
+                res = (res+mat[i][j])%MOD;
+            }
+        }
         return res;
     }
     
