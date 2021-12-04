@@ -78,6 +78,15 @@ struct matrix {
         }
     }
     
+    template <typename U>
+    void operator = (initializer_list<initializer_list<U>> lis) {
+        vector<vector<U>> vec;
+        for (auto i : lis) {
+            vec.emplace_back(vector<U>(i));
+        }
+        *this = vec;
+    }
+    
     matrix<T> operator + (matrix<T> m) {
         int x = m.w, y = m.h;
         assert(w == x && h == y);
@@ -134,4 +143,3 @@ struct matrix {
         os << "]\n";
         return os;
     }
-};
