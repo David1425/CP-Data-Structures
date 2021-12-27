@@ -14,7 +14,7 @@ Some data structures and algorithms that I use in competitive programming
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
  - Fast Exponentiation - [fast_power.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fast_power.cpp)
  - Matrix (multiplication, exponentiation) - [matrix.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/matrix.cpp)
- - FFT (polynomial, large number multiplication) - [fft.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fft.cpp)
+ - FFT (polynomial/large number multiplication) - [fft.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fft.cpp)
  - Modular Inverse & Extended Euclidean Algorithm - [mod_inv.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/mod_inv.cpp)
 
 ## Others
