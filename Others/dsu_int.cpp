@@ -1,4 +1,4 @@
-class DSU { // Only for numberic values that are not too big
+class DSU {
     public:
     vector<int> rank;
     vector<int> par;
