@@ -1,5 +1,5 @@
 template<typename T>
-class DSU { // Works for any types but a bit slower because of unordered_map
+class DSU {
     public:
     unordered_map<T, int> rank;
     unordered_map<T, T> par;
