@@ -24,15 +24,16 @@ class prime_sieve {
         }
     }
     
-    int lps(int x) { return lowest_prime_factor[x]; }
+    int lpf(int x) { return lowest_prime_factor[x]; }
     bool check(int x) { return is_prime[x]; }
     size_t size() { return primes.size(); }
+    int operator () (int i) { return primes[i]; }
     
     vector<int> factor(int x) {
         vector<int> fac;
         while (x > 1) {
-            fac.push_back(lps(x));
-            x /= lps(x);
+            fac.push_back(lpf(x));
+            x /= lpf(x);
         }
         return fac;
     }
@@ -40,9 +41,9 @@ class prime_sieve {
     set<int> unique_factor(int x) {
         set<int> fac;
         while (x > 1) {
-            fac.insert(lps(x));
-            x /= lps(x);
+            fac.insert(lpf(x));
+            x /= lpf(x);
         }
         return fac;
     }
-} ps(MM);
+};
