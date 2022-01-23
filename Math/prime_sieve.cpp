@@ -5,6 +5,7 @@ class prime_sieve {
     
     vector<int> lowest_prime_factor;
     vector<bool> is_prime;
+    vector<int> primes;
     void init(int n) {
         lowest_prime_factor.resize(n+5);
         is_prime.assign(n+5, 1);
@@ -18,12 +19,14 @@ class prime_sieve {
                         lowest_prime_factor[j] = i;
                     }
                 }
+                primes.pb(i);
             }
         }
     }
     
     int lps(int x) { return lowest_prime_factor[x]; }
     bool check(int x) { return is_prime[x]; }
+    int size() { return primes.size(); }
     
     vector<int> factor(int x) {
         vector<int> fac;
@@ -42,4 +45,4 @@ class prime_sieve {
         }
         return fac;
     }
-};
+} ps(MM);
