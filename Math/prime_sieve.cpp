@@ -26,7 +26,7 @@ class prime_sieve {
     
     int lps(int x) { return lowest_prime_factor[x]; }
     bool check(int x) { return is_prime[x]; }
-    int size() { return primes.size(); }
+    size_t size() { return primes.size(); }
     
     vector<int> factor(int x) {
         vector<int> fac;
