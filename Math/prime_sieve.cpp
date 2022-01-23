@@ -33,4 +33,13 @@ class prime_sieve {
         }
         return fac;
     }
+    
+    set<int> unique_factor(int x) {
+        set<int> fac;
+        while (x > 1) {
+            fac.insert(lps(x));
+            x /= lps(x);
+        }
+        return fac;
+    }
 };
