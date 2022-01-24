@@ -3,30 +3,28 @@ class prime_sieve {
     prime_sieve() {}
     prime_sieve(int n) { init(n); }
     
-    vector<int> lowest_prime_factor;
+    vector<int> LPF;
     vector<bool> is_prime;
     vector<int> primes;
     void init(int n) {
-        lowest_prime_factor.resize(n+5);
+        LPF.resize(n+5);
         is_prime.assign(n+5, 1);
+        is_prime[0] = 0;
         is_prime[1] = 0;
-        for (int i = 1; i <= n; i++) lowest_prime_factor[i] = i;
-        for (long long i = 2; i*i <= n; i++) {
+        for (long long i = 2; i <= n; i++) {
             if (is_prime[i]) {
-                for (long long j = i*i; j <= n; j += i) {
-                    if (is_prime[j]) {
-                        is_prime[j] = 0;
-                        lowest_prime_factor[j] = i;
-                    }
-                }
+                primes.push_back(i);
+                LPF[i] = i;
             }
-        }
-        for (int i = 2; i <= n; i++) {
-            if (is_prime[i]) primes.pb(i);
+            
+            for (long long j = 0; j < int(primes.size()) && primes[j] <= LPF[i] && i*primes[j] <= n; j++) {
+                is_prime[i*primes[j]] = 0;
+                LPF[i*primes[j]] = primes[j];
+            }
         }
     }
     
-    int lpf(int x) { return lowest_prime_factor[x]; }
+    int lpf(int x) { return LPF[x]; }
     bool check(int x) { return is_prime[x]; }
     size_t size() { return primes.size(); }
     int operator () (int i) { return primes[i]; }
