@@ -19,8 +19,10 @@ class prime_sieve {
                         lowest_prime_factor[j] = i;
                     }
                 }
-                primes.pb(i);
             }
+        }
+        for (int i = 2; i <= n; i++) {
+            if (is_prime[i]) primes.pb(i);
         }
     }
     
