@@ -6,13 +6,13 @@ class DSU {
     
     DSU() {}
     DSU(int n) : MX(n+2) {
-        size.resize(MX, 1);
-        par.resize(MX, -1);
+        size.assign(MX, 1);
+        par.assign(MX, -1);
     }
     
     void clear() {
-        size.resize(MX, 1);
-        par.resize(MX, -1);
+        size.assign(MX, 1);
+        par.assign(MX, -1);
     }
     
     int find(int x) {
