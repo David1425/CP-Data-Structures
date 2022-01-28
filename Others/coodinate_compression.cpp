@@ -1,4 +1,4 @@
-unordered_map<int, int> ccomp(vector<int> vec, bool start=0) {
+unordered_map<int, int> ccomp(vector<int> &vec, int start) {
     vec.erase(unique(vec.begin(), vec.end()), vec.end());
     int len = vec.size();
     unordered_map<int, int> um;
