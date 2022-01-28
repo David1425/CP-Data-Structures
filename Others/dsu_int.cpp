@@ -1,18 +1,18 @@
 class DSU {
     public:
-    vector<int> rank;
+    vector<int> size;
     vector<int> par;
     int MX;
     
     DSU() {}
     DSU(int n) : MX(n+2) {
-        rank.assign(n+2, 0);
-        par.assign(n+2, -1);
+        size.resize(MX, 1);
+        par.resize(MX, -1);
     }
     
     void clear() {
-        rank.assign(MX, 0);
-        par.assign(MX, -1);
+        size.resize(MX, 1);
+        par.resize(MX, -1);
     }
     
     int find(int x) {
@@ -24,11 +24,7 @@ class DSU {
     void merge(int a, int b) {
         int x = find(a), y = find(b);
         if (x == y) return;
-        if (rank[x] > rank[y]) par[y] = x;
-        else if (rank[x] < rank[y]) par[x] = y;
-        else {
-            par[y] = x;
-            rank[x]++;
-        }
+        if (size[x] >= size[y]) par[y] = x, size[x] += size[y];
+        else if (size[x] < size[y]) par[x] = y, size[y] += size[x];
     }
 };
