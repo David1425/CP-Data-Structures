@@ -25,6 +25,6 @@ class DSU {
         int x = find(a), y = find(b);
         if (x == y) return;
         if (size[x] >= size[y]) par[y] = x, size[x] += size[y];
-        else if (size[x] < size[y]) par[x] = y, size[y] += size[x];
+        else par[x] = y, size[y] += size[x];
     }
 };
