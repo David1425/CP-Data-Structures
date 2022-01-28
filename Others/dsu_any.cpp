@@ -1,13 +1,13 @@
 template<typename T>
 class DSU {
     public:
-    unordered_map<T, int> rank;
+    unordered_map<T, int> size;
     unordered_map<T, T> par;
     
     DSU() {}
     
     void clear() {
-        rank.clear();
+        size.clear();
         par.clear();
     }
     
@@ -20,11 +20,7 @@ class DSU {
     void merge(T a, T b) {
         T x = find(a), y = find(b);
         if (x == y) return;
-        if (rank[x] > rank[y]) par[y] = x;
-        else if (rank[x] < rank[y]) par[x] = y;
-        else {
-            par[y] = x;
-            rank[x]++;
-        }
+        if (size[x] >= size[y]) par[y] = x, size[x]+=size[y];
+        else par[x] = y, size[y]+=size[x];
     }
 };
