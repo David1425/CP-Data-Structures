@@ -1,6 +1,6 @@
 vector<int> suffix_array(string s) {
 	s += '$';
-	int n = int(s.size()), m = 127;
+	int n = int(s.size()), m = 200;
 	vector<int> cnt(max(m, n)), p(n), c(n);
 	for (int i = 0; i < n; i++) cnt[s[i]]++;
 	for (int i = 1; i < m; i++) cnt[i] += cnt[i-1];
