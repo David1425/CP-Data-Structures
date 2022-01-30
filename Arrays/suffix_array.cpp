@@ -32,9 +32,7 @@ vector<int> suffix_array(string s) {
 		ct[p[0]] = 0;
 		ind = 0;
 		for (int i = 1; i < n; i++) {
-			pair<int, int> cur = {c[p[i]], c[(p[i]+(1<<k))%n]};
-			pair<int, int> prev = {c[p[i-1]], c[(p[i-1]+(1<<k))%n]};
-			if (cur != prev) ind++;
+			if (c[p[i]] != c[p[i-1]] || c[(p[i]+(1<<k))%n] != c[(p[i-1]+(1<<k))%n]) ind++;
 			ct[p[i]] = ind;
 		}
 		ind++;
