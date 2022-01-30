@@ -1,4 +1,5 @@
 vector<int> suffix_array(string s) {
+	s += '$';
 	int n = int(s.size()), m = CHAR_MAX;
 	vector<int> cnt(m), p(n), c(n);
 	for (int i = 0; i < n; i++) cnt[s[i]]++;
@@ -40,5 +41,6 @@ vector<int> suffix_array(string s) {
 		c = ct;
 	}
 	
+	p.erase(p.begin());
 	return p;
 }
