@@ -5,7 +5,7 @@
 
 # example:
 # test.sh 10 /usr/code
-# stress test A.cpp 10 times in path /usr/code
+# stress test /usr/code/A.cpp 10 times
 
 echo "compiling scripts..."
 g++ "${2}/gen.cpp" -o gen
