@@ -49,27 +49,27 @@ int main(int argc, char* argv[]) {
     ios_base::sync_with_stdio(0); cin.tie(0);
     
     string files[2] = {argv[1], argv[2]};
-    ifstream ain(files[0]), bin(files[1]);
+    ifstream a_in(files[0]), b_in(files[1]);
     string x, y;
     int line = 0;
     vector<err> diff;
     trimmer tr;
-    getline(ain, x);
-    getline(bin, y);
+    getline(a_in, x);
+    getline(b_in, y);
     x = tr.trim(x); y = tr.trim(y);
     while (x!="" || y!="") {
         line++;
         if (x != y) {
             diff.push_back({line, x, y});
         }
-        getline(ain, x);
-        getline(bin, y);
+        getline(a_in, x);
+        getline(b_in, y);
         x = tr.trim(x); y = tr.trim(y);
     }
     
     if (!diff.empty()) {
         printCase();
-        cout << diff.size() << " difference(s) found.\n";
+        cout << int(diff.size()) << " difference(s) found.\n";
         for (auto i : diff) {
             cout << "at line " << i.l << ":\n\tA.cpp: " << i.va << "\n\tB.cpp: " << i.vb << "\n";
         }
