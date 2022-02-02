@@ -7,8 +7,11 @@ Some data structures and algorithms that I use in competitive programming
  - Binary Indexed Tree - [binary_indexed_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/binary_indexed_tree.cpp)
 
 ## Arrays
- - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Arrays/suffix_array.cpp)
  - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Arrays/sparse_table.cpp)
+
+## Strings
+ - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Strings/suffix_array.cpp)
+ - Build LCP Array from Suffix Array (Needs RMQ) - [lcp.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Strings/lcp.cpp)
 
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
