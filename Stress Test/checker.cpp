@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
     
     if (!diff.empty()) {
         printCase();
-        cout << diff.size() << " difference found.\n";
+        cout << diff.size() << " difference(s) found.\n";
         for (auto i : diff) {
             cout << "at line " << i.l << ":\n\tA.cpp: " << i.va << "\n\tB.cpp: " << i.vb << "\n";
         }
