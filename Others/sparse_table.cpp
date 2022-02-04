@@ -1,6 +1,5 @@
 template<typename T>
 struct sparse_table {
-	int flog2(long long x) { return 63 - __builtin_clzl(x); }
 	int flog2(int x) { return 31 - __builtin_clz(x); }
 	
 	vector<vector<T>> tbl;
