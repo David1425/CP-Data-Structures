@@ -24,3 +24,4 @@ Some data structures and algorithms that I use in competitive programming
  - Disjoint Set Union for any type - [dsu_any.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_any.cpp)
  - Coodinate Compression - [coodinate_compression.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/coodinate_compression.cpp)
  - Custom Hash Function from [neal's](https://codeforces.com/blog/entry/62393) cf post - [custom_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/custom_hash.cpp)
+ - Hashing for Pairs - [pair_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/pair_hash.cpp)
