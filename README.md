@@ -4,7 +4,7 @@ Some data structures and algorithms that I use in competitive programming
 ## Trees
  - Segment Tree - [segment_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/segment_tree.cpp)
  - Semgent Tree with Lazy Propagation - [seg_lazy.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/seg_lazy.cpp)
- - Binary Indexed Tree - [binary_indexed_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/binary_indexed_tree.cpp)
+ - Binary Indexed / Fenwick Tree - [fenwick_tree.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Trees/fenwick_tree.cpp)
  - DFS for LCA Depth (Needs RMQ) - [lca_dfs.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Trees/lca_dfs.cpp)
 
 ## Strings
