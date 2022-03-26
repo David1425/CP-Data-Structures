@@ -17,6 +17,7 @@ Some data structures and algorithms that I use in competitive programming
  - Matrix (fast exponentiation) - [matrix.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/matrix.cpp)
  - FFT (polynomial/large number multiplication) - [fft.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fft.cpp)
  - Modular Inverse & Extended Euclidean Algorithm - [mod_inv.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/mod_inv.cpp)
+ - Polynomial Division - [polynomial_division.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/polynomial_division.cpp)
 
 ## Others
  - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/sparse_table.cpp)
