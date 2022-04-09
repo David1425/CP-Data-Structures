@@ -22,7 +22,7 @@ struct fenwick_tree {
 	void update(int i, T v) {
 		for (; i <= size; i += i&-i) bit[i] = op(bit[i], v);
 	}
-	void rupdate(int i, T v) {
+	void iupdate(int i, T v) {
 		for (; i > 0; i -= i&-i) bit[i] = op(bit[i], v);
 	}
 	
@@ -31,7 +31,7 @@ struct fenwick_tree {
 		for (; i > 0; i -= i&-i) r = op(r, bit[i]);
 		return r;
 	}
-	T rquery(int i) {
+	T iquery(int i) {
 		T r = base;
 		for (; i <= size; i += i&-i) r = op(r, bit[i]);
 		return r;
