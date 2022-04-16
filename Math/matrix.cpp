@@ -1,4 +1,4 @@
-template<typename T=long long, T mod=1000000007>
+template<typename T, T mod=1000000007>
 class matrix {
 	vector<vector<T>> mat;
 	
