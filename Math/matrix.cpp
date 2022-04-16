@@ -68,17 +68,17 @@ public:
 	}
 	
 	friend istream& operator >> (istream& is, matrix<T,mod>& m) {
-        for (auto& i : m.mat) for (auto& j : i) is>>j;
-        return is;
-    }
-    
-    friend ostream& operator << (ostream& os, matrix<T,mod> m) {
-        os << "[\n";
-        for (auto i : m.mat) {
-            os << "[";
-            for (int j = 0; j < m.w; j++) os << i[j] << ((j < m.w-1) ? ", " : "]\n");
-        }
-        os << "]\n";
-        return os;
-    }
+		for (auto& i : m.mat) for (auto& j : i) is>>j;
+		return is;
+	}
+	
+	friend ostream& operator << (ostream& os, matrix<T,mod> m) {
+		os << "[\n";
+		for (auto i : m.mat) {
+			os << "[";
+			for (int j = 0; j < m.w; j++) os << i[j] << ((j < m.w-1) ? ", " : "]\n");
+		}
+		os << "]\n";
+		return os;
+	}
 };
