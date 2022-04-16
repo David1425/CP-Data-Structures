@@ -1,133 +1,78 @@
-template <typename T = long long>
-struct matrix {
-    vector<vector<T>> mat;
-    int h, w;
-    
-    //-- Matrix constructors --//
-    matrix(int h=1, int w=1, T v=0, bool d=0) : h(h), w(w) {
-        if(!d) mat.assign(h, vector<T>(w, v));
-        else {
-            mat.assign(h, vector<T>(w, 0));
-            for (int i = 0; i < min(h, w); i++) mat[i][i] = v;
-        }
-    }
-    template <typename U>
-    matrix(matrix<U> m) {
-        h = m.h; w = m.w;
-        mat.resize(h);
-        for (int i = 0; i < h; i++) {
-            mat[i] = vector<T>(m(i).begin(), m(i).end());
-        }
-    }
-    template <typename U> matrix(vector<vector<U>> vec) { init(vec); }
-    template <typename U>
-    matrix(initializer_list<initializer_list<U>> lis) {
-        vector<vector<U>> t_vec;
-        for (auto i : lis) {
-            t_vec.emplace_back(vector<U>(i));
-        }
-        init(t_vec);
-    }
-    
-    template <typename U>
-    void init(vector<vector<U>> vec) {
-        h = vec.size();
-        w = vec[0].size();
-        mat.resize(vec.size());
-        for (int i = 0; i < vec.size(); i++) {
-            mat[i] = vector<T>(vec[i].begin(), vec[i].end());
-        }
-    }
-    
-    //-- Assignment functions --//
-    template <typename U>
-    void fill(U x) { mat.assign(h, vector<T>(w, T(x))); }
-    
-    template <typename U>
-    void fill_d(U x) { for(int i=0;i<min(h,w);i++)mat[i][i]=x; }
-    
-    //-- Math functions --//
-    template <typename U>
-    matrix<T> pow(U b) {
-        b--;
-        matrix<T> a(*this), res(*this);
-        while (b > 0) {
-            if (b&1) res = res*a;
-            a = a*a;
-            b >>= 1;
-        }
-        
-        return res;
-    }
-    
-    T sum(int rs = 0, int cs = 0, int rt = -1, int ct = -1) {
-        if (rt == -1) rt = h-1;
-        if (ct == -1) ct = w-1;
-        T res = 0;
-        for (int i = rs; i <= rt; i++) {
-            for (int j = cs; j <= ct; j++) {
-                res = (res+mat[i][j])%MOD;
-            }
-        }
-        return res;
-    }
-    
-    //-- Index operators --//
-    T& operator () (int r, int c) { return mat[r][c]; }
-    vector<T>& operator () (int r) { return mat[r]; }
-    
-    //--- Arithmetic operators --//
-    template <typename U>
-    void operator = (vector<vector<U>> vec) { *this = matrix(vec); }
-    template <typename U>
-    void operator = (initializer_list<initializer_list<U>> lis) { *this = matrix(lis); }
-    
-    matrix<T> operator + (matrix<T> m) {
-        int x = m.w, y = m.h;
-        assert(w == x && h == y);
-        matrix<T> tmp(h, w);
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                tmp(i, j) = (mat[i][j] + m(i, j))%MOD;
-            }
-        }
-        return tmp;
-    }
-    
-    matrix<T> operator - (matrix<T> m) {
-        int x = m.w, y = m.h;
-        assert(w == x && h == y);
-        matrix<T> tmp(h, w);
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                tmp(i, j) = (mat[i][j] - m(i, j)+MOD)%MOD;
-            }
-        }
-        return tmp;
-    }
-    
-    matrix<T> operator * (matrix<T> m) {
-        int x = m.w, y = m.h;
-        assert(w == y);
-        matrix<T> tmp(h, x);
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                for (int k = 0; k < x; k++) {
-                    tmp(i, k) = (tmp(i, k) + (mat[i][j]*m(j, k))%MOD)%MOD;
-                }
-            }
-        }
-        
-        return tmp;
-    }
-    
-    //-- I/O stream operators --//
-    friend istream& operator >> (istream& is, matrix<T>& m) {
+template<typename T=long long, T mod=1000000007>
+class matrix {
+	vector<vector<T>> mat;
+	
+public:
+	int h, w;
+	matrix(int n=0, int m=0, T v=0) : h(n), w(m), mat(n, vector<T>(m, v)) {}
+	matrix(const vector<vector<T>>& vec) : mat(vec) {
+		if (vec.empty()) {
+			h = 0;
+			w = 0;
+		} else {
+			h = vec.size();
+			w = vec[0].size();
+		}
+	}
+	matrix(const vector<T>& vec) {
+		if (vec.empty()) {
+			h = 0;
+			w = 0;
+		} else {
+			h = 1;
+			w = vec.size();
+			mat = vector<vector<T>>(1, vec);
+		}
+	}
+	
+	vector<T>& operator[] (int i) { return mat[i]; }
+	
+	matrix<T,mod> operator* (matrix<T,mod> m) {
+		assert(w == m.h);
+		matrix<T,mod> res(h, m.w, 0);
+		for (int i = 0; i < h; i++) {
+			for (int j = 0; j < m.w; j++) {
+				for (int k = 0; k < w; k++) {
+					res[i][j] += (mat[i][k] * m[k][j])%mod;
+					res[i][j] %= mod;
+				}
+			}
+		}
+		return res;
+	}
+	
+	void fillRow(int i, T x) { for (int j = 0; j < w; j++) mat[i][j] = x; }
+	void fillCol(int j, T x) { for (int i = 0; i < h; i++) mat[i][j] = x; }
+	T getRow(int i) {
+		T res = 0;
+		for (int j = 0; j < w; j++) res = (res+mat[i][j])%mod;
+		return res;
+	}
+	T getCol(int j) {
+		T res = 0;
+		for (int i = 0; i < h; i++) res = (res+mat[i][j])%mod;
+		return res;
+	}
+	
+	template<typename U>
+	matrix<T,mod> pow(U b) {
+		assert(h==w);
+		matrix<T,mod> res(h,h), a(*this);
+		for (int i = 0; i < h; i++) res[i][i] = 1;
+		while (b > 0) {
+			if (b&1) res = res*a;
+			a = a*a;
+			b >>= 1;
+		}
+		return res;
+	}
+	
+	friend istream& operator >> (istream& is, matrix<T,mod>& m) {
         for (auto& i : m.mat) for (auto& j : i) is>>j;
         return is;
     }
     
-    friend ostream& operator << (ostream& os, matrix<T> m) {
+    friend ostream& operator << (ostream& os, matrix<T,mod> m) {
         os << "[\n";
         for (auto i : m.mat) {
             os << "[";
