@@ -17,9 +17,9 @@ int centroid(int u, int p, int x) {
 	return u;
 }
 
-vector<pll> tmp;
-void dfs2(int u, int p, ll d) {
-	tmp.pb({u,d});
+vi tmp;
+void dfs2(int u, int p, int d) {
+	tmp.pb(d);
 	for (auto [v,w] : adj[u]) {
 		if (v != p && !vis[v]) {
 			dfs2(v, u, d+w);
@@ -28,16 +28,22 @@ void dfs2(int u, int p, ll d) {
 }
 
 vi par(MM,-1);
+
 void centDecomp(int u, int p) {
 	dfs1(u,p);
 	u = centroid(u,-1,s[u]);
 	par[u] = p;
 	vis[u] = 1;
-	dfs2(u,p,0);
 	
+	vi vec;
 	for (auto [v,w] : adj[u]) {
 		if (!vis[v]) {
-			centDecomp(v,u);
+			tmp.clear();
+			dfs2(v,u,w);
+			for (int i = 0; i < sz(tmp); i++) vec.pb(tmp[i]);
+			
 		}
 	}
+	
+	for (auto [v,w] : adj[u]) if (!vis[v]) centDecomp(v,u);
 }
