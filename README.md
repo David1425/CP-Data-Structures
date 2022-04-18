@@ -5,6 +5,7 @@ Some data structures and algorithms that I use in competitive programming
  - Segment Tree - [segment_tree.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Range%20Queries/segment_tree.cpp)
  - Semgent Tree with Lazy Propagation - [segment_tree_lazy.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Range%20Queries/segment_tree_lazy.cpp)
  - Binary Indexed / Fenwick Tree - [fenwick_tree.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Range%20Queries/fenwick_tree.cpp)
+ - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/sparse_table.cpp)
  - DFS for LCA Depth (Needs RMQ) - [lca_dfs.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Range%20Queries/lca_dfs.cpp)
 
 ## Strings
@@ -20,7 +21,6 @@ Some data structures and algorithms that I use in competitive programming
  - Polynomial Division - [polynomial_division.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/polynomial_division.cpp)
 
 ## Others
- - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/sparse_table.cpp)
  - Disjoint Set Union for numbers (O(max_value) space required) - [dsu_int.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_int.cpp)
  - Disjoint Set Union for any type - [dsu_any.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_any.cpp)
  - Coodinate Compression - [coodinate_compression.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/coodinate_compression.cpp)
