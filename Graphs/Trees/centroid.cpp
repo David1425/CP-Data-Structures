@@ -17,9 +17,9 @@ int centroid(int u, int p, int x) {
 	return u;
 }
 
-vl dep[MM];
+vector<pll> tmp;
 void dfs2(int u, int p, ll d) {
-	dep[u].pb(d);
+	tmp.pb({u,d});
 	for (auto [v,w] : adj[u]) {
 		if (v != p && !vis[v]) {
 			dfs2(v, u, d+w);
