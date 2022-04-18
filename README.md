@@ -20,6 +20,10 @@ Some data structures and algorithms that I use in competitive programming
  - Modular Inverse & Extended Euclidean Algorithm - [mod_inv.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/mod_inv.cpp)
  - Polynomial Division - [polynomial_division.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/polynomial_division.cpp)
 
+## Graphs
+ - ### Trees
+    - Centroid Decompositions - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
+
 ## Others
  - Disjoint Set Union for numbers (O(max_value) space required) - [dsu_int.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_int.cpp)
  - Disjoint Set Union for any type - [dsu_any.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_any.cpp)
