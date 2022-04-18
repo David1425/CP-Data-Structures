@@ -12,6 +12,10 @@ Some data structures and algorithms that I use in competitive programming
  - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Strings/suffix_array.cpp)
  - Build LCP Array from Suffix Array (Needs RMQ) - [lcp.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Strings/lcp.cpp)
 
+## Graphs
+ - ### Trees
+    - Centroid Decompositions - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
+
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
  - Fast Exponentiation - [fast_power.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fast_power.cpp)
@@ -19,10 +23,6 @@ Some data structures and algorithms that I use in competitive programming
  - FFT (polynomial/large number multiplication) - [fft.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/fft.cpp)
  - Modular Inverse & Extended Euclidean Algorithm - [mod_inv.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/mod_inv.cpp)
  - Polynomial Division - [polynomial_division.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/polynomial_division.cpp)
-
-## Graphs
- - ### Trees
-    - Centroid Decompositions - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
 
 ## Others
  - Disjoint Set Union for numbers (O(max_value) space required) - [dsu_int.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Others/dsu_int.cpp)
