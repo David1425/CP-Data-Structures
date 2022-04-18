@@ -14,7 +14,7 @@ Some data structures and algorithms that I use in competitive programming
 
 ## Graphs
  - ### Trees
-    - Centroid Decompositions - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
+    - Centroid Decomposition - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
 
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
