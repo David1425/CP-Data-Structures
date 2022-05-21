@@ -53,3 +53,5 @@ struct ModInt {
 	friend istream& operator >> (istream& is, MI& mi) { is >> mi.num; mi=MI(mi.num); return is; }
 	friend ostream& operator << (ostream& os, const MI& mi) { os << mi.num; return os; }
 };
+
+using mint = ModInt<int64_t, MOD>;
