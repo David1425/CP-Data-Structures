@@ -9,7 +9,7 @@ struct ModInt {
 	using MI = ModInt<intType,mod>;
 	
 	template<typename T>
-	MI operator = (const T& val) { num=MI(val); return *this; }
+	MI operator = (const T& val) { *this=MI(val); return *this; }
 	
 	MI inv() {
 		MI a = num, x = 1;
@@ -22,15 +22,16 @@ struct ModInt {
 		return x;
 	}
 	
-	MI operator + (MI val) { return MI(num+val.num); }
-	MI operator - (MI val) { return MI(num-val.num); }
-	MI operator * (MI val) { return MI(num*val.num); }
-	MI operator / (MI val) { return MI(num*val.inv().num); }
+	MI operator + (const MI& val) { return MI(num+val.num); }
+	MI operator - (const MI& val) { return MI(num-val.num); }
+	MI operator * (const MI& val) { return MI(num*val.num); }
+	MI operator / (const MI& val) { return MI(num*val.inv().num); }
 	
-	void operator += (MI val) { *this = (*this)+val; }
-	void operator -= (MI val) { *this = (*this)-val; }
-	void operator *= (MI val) { *this = (*this)*val; }
-	void operator /= (MI val) { *this = (*this)/val; }
+	void operator += (const MI& val) { *this = (*this)+val; }
+	void operator -= (const MI& val) { *this = (*this)-val; }
+	void operator *= (const MI& val) { *this = (*this)*val; }
+	void operator /= (const MI& val) { *this = (*this)/val; }
+	
 	MI& operator ++ () {
 		*this += MI(1);
 		return *this;
@@ -50,8 +51,15 @@ struct ModInt {
 		return old;
 	}
 	
+	bool operator < (const MI& val) { return num < val.num; }
+	bool operator <= (const MI& val) { return num <= val.num; }
+	bool operator > (const MI& val) { return num > val.num; }
+	bool operator >= (const MI& val) { return num >= val.num; }
+	bool operator == (const MI& val) { return num == val.num; }
+	bool operator != (const MI& val) { return num != val.num; }
+	
 	friend istream& operator >> (istream& is, MI& mi) { is >> mi.num; mi=MI(mi.num); return is; }
 	friend ostream& operator << (ostream& os, const MI& mi) { os << mi.num; return os; }
 };
 
-using mint = ModInt<int64_t, MOD>;
+using mi = ModInt<int64_t, MOD>;
