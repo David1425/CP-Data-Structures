@@ -15,6 +15,8 @@ Some data structures and algorithms that I use in competitive programming
 ## Graphs
  - ### Trees
     - Centroid Decomposition - [centroid.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/centroid.cpp)
+    - DFS for Lowest Common Ancestor with RMQ - [lca_rmq.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Graphs/Trees/lca_rmq.cpp)
+    - DFS for Lowest Common Ancestor with Binary Lifting - [lca_bl.cpp]()
 
 ## Math
  - Sieve of Eratosthenes - [prime_sieve.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Math/prime_sieve.cpp)
