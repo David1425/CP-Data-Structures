@@ -6,7 +6,6 @@ Some data structures and algorithms that I use in competitive programming
  - Semgent Tree with Lazy Propagation - [segment_tree_lazy.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Range%20Queries/segment_tree_lazy.cpp)
  - Binary Indexed / Fenwick Tree - [fenwick_tree.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Range%20Queries/fenwick_tree.cpp)
  - Sparse Table - [sparse_table.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Range%20Queries/sparse_table.cpp)
- - DFS for LCA Depth (Needs RMQ) - [lca_dfs.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Range%20Queries/lca_dfs.cpp)
 
 ## Strings
  - Suffix Array - [suffix_array.cpp](https://github.com/David1425/CP-Data-Structures/blob/main/Strings/suffix_array.cpp)
