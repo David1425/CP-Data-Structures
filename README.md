@@ -1,4 +1,4 @@
-# CP-DataStructures-And-Algorithms
+# DataStructures-And-Algorithms
 Some data structures and algorithms that I use in competitive programming
 
 ## Queries & Updates
