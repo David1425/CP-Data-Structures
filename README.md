@@ -37,4 +37,4 @@ Some data structures and algorithms that I use in competitive programming
 ## Stress Testing
  - [Test case generator](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/gen.cpp)
  - [Checker](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/checker.cpp)
- - [Bash script to call generator and checker]([https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/checker.cpp](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/test.sh)https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/test.sh)
+ - [Main script](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/test.sh)
