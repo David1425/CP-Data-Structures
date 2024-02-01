@@ -33,3 +33,8 @@ Some data structures and algorithms that I use in competitive programming
  - Coodinate Compression - [coodinate_compression.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/coodinate_compression.cpp)
  - Custom Hash Function from [neal's](https://codeforces.com/blog/entry/62393) cf post - [custom_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/custom_hash.cpp)
  - Hashing for Pairs - [pair_hash.cpp](https://github.com/David1425/CP-DataStructures-And-Algorithms/blob/main/Others/pair_hash.cpp)
+
+## Stress Testing
+ - [Test case generator](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/gen.cpp)
+ - [Checker](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/checker.cpp)
+ - [Bash script to call generator and checker]([https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/checker.cpp](https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/test.sh)https://github.com/David1425/DataStructures-And-Algorithms/blob/main/Stress%20Test/test.sh)
